@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log in - Padel Badeli 7yeti</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-left">
+            <div class="logo">
+                <i class="fas fa-table-tennis"></i> 
+                <h1>Padel Badeli 7yeti</h1> 
+            </div>
+        <div class="welcome-text">
+            <h2>Welcome Back</h2>
+            <p>Log in to book courts, manage memberships, and enjoy the game you love .</p>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-calendar-check"></i> 
+                <span>Easy court booking & reservation system</span> 
+            </div>
+        
+            <div class="feature">
+                <i class="fas fa-user-friends"></i> 
+                <span>Find playing partners & organize matches</span> 
+            </div>
+            <div class="feature">
+                <i class="fas fa-check"></i> 
+                <span>Reliable and tested levels</span> 
+            </div>
+        </div>
+    </div>
+        
+        <div class="login-right">
+            <form class="login-form" id="loginForm">
+                <h3>Log In</h3>                
+                <div class="form-group" id="emailGroup">
+                    <label for="email">Email Address</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your Email adress" required>
+                    </div>
+                    <div class="error-message">Please enter a valid email address</div>
+                </div>
+                
+                <div class="form-group" id="passwordGroup">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                    </div>
+                    <div class="error-message">Password must be at least 6 characters</div>
+                </div>
+                
+                <div class="options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="forgot_pasword.html" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-sign-in-alt"></i> Log in
+                </button>
+                                
+                <div class="signup-link">
+                    Don't have an account? <a href="sign_up.html">Sign up now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

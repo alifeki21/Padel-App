@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up - Padel Badeli 7yeti</title>
+    <link rel="stylesheet" href="sign_up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-form-container">
+            <form class="signup-form" id="signupForm">
+                <div class="form-header">
+                    <div class="logo">
+                        <i class="fas fa-table-tennis"></i> 
+                        <h1>Padel Badeli 7yeti</h1> 
+                    </div>
+                    <h2>Create Your Account</h2>
+                    <p>Join our community to book courts and connect with players</p>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group" id="firstNameGroup">
+                        <label for="firstName">First Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="firstName" class="form-control" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="error-message">First name is required</div>
+                    </div>
+                    
+                    <div class="form-group" id="lastNameGroup">
+                        <label for="lastName">Last Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" required>
+                        </div>
+                        <div class="error-message">Last name is required</div>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="emailGroup">
+                    <label for="email">Email Address</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="error-message">Please enter a valid email address</div>
+                </div>
+                
+                <div class="form-group" id="phoneGroup">
+                    <label for="phone">Phone Number</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="error-message">Please enter a valid phone number</div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group" id="passwordGroup">
+                        <label for="password">Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+                        </div>
+                        <div class="error-message">Password must be at least 8 characters</div>
+                    </div>
+                    
+                    <div class="form-group" id="confirmPasswordGroup">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+                        </div>
+                        <div class="error-message">Passwords do not match</div>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="levelGroup">
+                    <label for="level">Skill Level (1-10)</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-chart-bar"></i>
+                        <input type="number" 
+                               id="level" 
+                               class="form-control" 
+                               placeholder="Enter skill level (e.g., 5.5)"
+                               min="1" 
+                               max="10" 
+                               step="0.1"
+                               required>
+                    </div>
+                    <div class="error-message">Please enter a number between 1 and 10</div>
+                    <div class="skill-level-hint">
+                        <small>1 = Beginner, 10 = Professional (decimals like 3.5, 7.2 are allowed)</small>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group" id="positionGroup">
+                        <label for="position">Preferred Position</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <select id="position" class="form-control" required>
+                                <option value="">Select your position</option>
+                                <option value="left">Left Side</option>
+                                <option value="right">Right Side</option>
+                                <option value="both">Both Sides</option>
+                            </select>
+                        </div>
+                        <div class="error-message">Please select your position</div>
+                    </div>
+                    
+                    <div class="form-group" id="handGroup">
+                        <label for="hand">Playing Hand</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-hand-paper"></i>
+                            <select id="hand" class="form-control" required>
+                                <option value="">Select your hand</option>
+                                <option value="right">Right-handed</option>
+                                <option value="left">Left-handed</option>
+                            </select>
+                        </div>
+                        <div class="error-message">Please select your playing hand</div>
+                    </div>
+                </div>
+                
+                <div class="options">
+                    <div class="terms">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a></label>
+                    </div>
+                </div>
+                
+                <div class="error-message" id="termsError" style="display: none; margin-bottom: 15px;">
+                    You must agree to the terms and conditions
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+                
+                <div class="login-link">
+                    Already have an account? <a href="login.html">Log in here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
