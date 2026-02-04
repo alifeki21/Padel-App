@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    min-height: 100vh;
+}
+
+.signup-form-container {
+    width: 100%;
+    background-color: white;
+    padding: 50px 40px;
+    border-radius: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #4a6ee0;
+}
+
+.logo i {
+    font-size: 32px;
+    margin-right: 12px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(to right, #4a6ee0, #6a11cb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-header h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    z-index: 1;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #4a6ee0;
+    box-shadow: 0 0 0 3px rgba(74, 110, 224, 0.1);
+    outline: none;
+}
+
+select.form-control {
+    appearance: none;
+    cursor: pointer;
+    padding-right: 40px;
+}
+
+.skill-level-hint {
+    margin-top: 5px;
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.options {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+}
+
+.terms input {
+    margin-right: 10px;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.terms label {
+    color: #555;
+    line-height: 1.4;
+}
+
+.terms a {
+    color: #4a6ee0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+    box-shadow: 0 7px 14px rgba(74, 110, 224, 0.2);
+}
+
+.submit-btn {
+    background: linear-gradient(to right, #4a6ee0, #6a11cb);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(74, 110, 224, 0.2);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.login-link {
+    text-align: center;
+    color: #666;
+}
+
+.login-link a {
+    color: #4a6ee0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+    box-shadow: 0 7px 14px rgba(74, 110, 224, 0.2);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.error .form-control {
+    border-color: #e74c3c;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.form-group.success .form-control {
+    border-color: #2ecc71;
+}
+
+@media (max-width: 768px) {
+    .signup-form-container {
+        padding: 30px 25px;
+        border-radius: 30px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .logo h1 {
+        font-size: 24px;
+    }
+    
+    .form-header h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-form-container {
+        padding: 25px 20px;
+        border-radius: 25px;
+    }
+    
+    body {
+        padding: 15px;
+    }
+    
+    .form-header h2 {
+        font-size: 24px;
+    }
+    
+    .logo i {
+        font-size: 28px;
+    }
+}
