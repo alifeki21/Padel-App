@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padel Badeli 7yeti- Feedback</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            width: 100%;
+        }
+           .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .titre {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 8px; 
+        }
+        .soustitre {
+            color: #718096;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        .box1 {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .box1 h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .box1 ul {
+            list-style-type: none;
+        }
+
+        .box1 li {
+            padding: 8px 0;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+        }
+
+        .box1 li i {
+            color: #48bb78;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+         .box2 {
+            background-color: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .box2_titre {
+            color: #2d3748;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .box2_soustitre {
+            color: #718096;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+        .elmts_form {
+            margin-bottom: 22px;
+        }
+        label {
+            display: block;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+            input, textarea, select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            color: #2d3748;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #48bb78;
+            box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
+        }
+        .niveau{
+            display:flex;
+            gap:20px;
+            margin : 15px 0 20px; 
+
+        }
+         .btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #e03e38;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #e25a5a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+        }
+        .retour {
+            text-align: center;
+            margin-top: 25px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .retour a {
+            color: #48bb78;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .retour a:hover {
+            text-decoration: underline;
+        }
+        
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="titre">Padel Badeli 7yeti</div>
+            <div class="soustitre">Pour une meilleure expérience de padel</div>
+        </div>
+
+        <div class="box1">
+            <h3>Dans quel cas doit-on signaler un joueur</h3>
+            <ul>
+                <li><i class="fas fa-times-circle" style="color: #e53e3e;"></i> Mauvais comprotement du joueur</li>
+                <li><i class="fas fa-times-circle" style="color: #e53e3e;"></i> Niveau erroné du joueur</li>
+            </ul>
+        </div>
+        <div class="box2">
+            
+            <form id="feedbackForm">
+                <div class="elmts_form">
+                    <label for="Nom et Prénom">Nom et Prénom</label>
+                    <input type="Nom et Prénom" id="Nom et Prénom" placeholder="Entrer le Nom et Prénom du joueur">
+                </div>
+                 <div class="elmts_form">
+                    <label for="Numtel">Numéro de téléphone</label>
+                    <input type="Numtel" id="Numtel" placeholder="Entrer le Numéro de téléphone du joueur">
+                </div>
+                
+                <div class="elmts_form">
+                    <label for="feedbackType">Type de signalement</label>
+                    <select id="feedbackType">
+                        <option value="">Sélectionnez un type</option>
+                        <option value="comportement">Mauvais comportement</option>
+                        <option value="niveau">Correction du niveau</option>
+                    </select>
+                </div>
+                <div class="elmts_form">
+                     <label for="mauvais niveau">Corrigez le niveau du joueur</label>
+                </div>
+                 <div class="elmts_form">
+                    <div class="niveau">
+                   
+                    <div class="elmts_form">
+                        <label for="niveau indique">Niveau indiqué</label>
+                        <input type="Niveau indique" id="Niveau indique" placeholder="">
+                        </div>
+                    <div class="elmts_form">
+                        <label for="niveau reel">  Niveau réel</label>
+                        <input type="Niveau reel" id="Niveau reel" placeholder="">
+                    </div>
+
+
+                    </div>
+                </div>
+                <div class="elmts_form">
+                    <label for="niv">Expliquez pourquoi</label>
+                    <textarea id="niv" placeholder="Pourquoi doit-on changer le niveau de ce joueur"></textarea>
+                </div>
+                <div class="elmts_form">
+                    <label for="comp">Signalement pour mauvais comprotement</label>
+                    <textarea id="comp" placeholder="Dites-nous ce qui s'est passé"></textarea>
+                </div>
+                <button type="submit" class="btn">Envoyer le signalement</button>
+            </form>
+            
+            <div class="retour">
+                Retour à l'accueil ? <a href="#">Cliquez ici</a>
+            </div>
+            </div>
+    </div>
+</body> 
+                
+
