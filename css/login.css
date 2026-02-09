@@ -221,6 +221,12 @@ body {
 .form-group.error .error-message {
     display: block;
 }
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    transform: translateX(95%);
+    cursor: pointer;
+}
 
 .form-group.success .form-control {
     border-color: #2ecc71;
