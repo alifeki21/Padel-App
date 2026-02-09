@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const group = document.getElementById(field.groupId);
                         group.classList.remove('error', 'success');
                     });
-                    window.location.href = '../html/index1.html';
+                    window.location.href = '../html/acceuil.html';
                 } else {
                     const emailGroup = document.getElementById('emailGroup');
                     const passwordGroup = document.getElementById('passwordGroup');
