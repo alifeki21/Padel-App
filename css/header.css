@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --deep-blue: #0f172a;
+  --main-blue: #1e40af;
+  --bright-blue: #3b82f6;
+  --light-blue: #dbeafe;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+body {
+  background-color: #f8fafc;
+  color: var(--deep-blue);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.on
+{
+  background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* ================= BUTTONS ================= */
+.primary-btn {
+  background-color: #3e1bbf;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color:#3e1bbf;
+  transform: translateY(-2px);
+}
+
+/* ================= HEADER ================= */
+/* Ensure the wrapper doesn't restrict the nav */
+/* 1. Target the UL container to put items in a row */
+.site-header {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+.navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Style the individual links */
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #3e1bbf;
+}
+
+.navbar-brand {
+  background-color: #222;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+
+
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .text-12 {
+    font-size: 1.7rem;
+  }
+
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  .bg-container {
+    min-height: 60vh;
+  }
+}
