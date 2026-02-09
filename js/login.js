@@ -86,17 +86,12 @@ document.addEventListener('DOMContentLoaded', function() {
             rememberCheckbox.checked = true;
         }
     }
-
-    // Initialize remember me check
     checkRememberMe();
-
-    // Form submission
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         let isValid = true;
         
-        // Validate all fields
         fields.forEach(field => {
             if (!validateField(field)) {
                 isValid = false;
@@ -104,12 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         if (isValid) {
-            // Collect form data
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const rememberMe = document.getElementById('remember').checked;
             
-            // Save credentials if remember me is checked
             if (rememberMe) {
                 localStorage.setItem('rememberedEmail', email);
                 localStorage.setItem('rememberedPassword', password);
@@ -118,16 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.removeItem('rememberedPassword');
             }
             
-            // Show loading state
             const submitBtn = document.querySelector('.submit-btn');
             const originalText = submitBtn.innerHTML;
             
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging In...';
             submitBtn.disabled = true;
             
-            // Simulate API call with demo credentials
             setTimeout(() => {
-                // Demo validation (replace with real API call)
                 const demoCredentials = {
                     email: 'demo@example.com',
                     password: 'Demo123!'
@@ -137,10 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (email === demoCredentials.email && password === demoCredentials.password) {
                     alert('Login successful! Welcome back to Padel Badeli 7yeti!');
                     
-                    // Reset form
                     loginForm.reset();
                     
-                    // Reset field states
                     fields.forEach(field => {
                         const group = document.getElementById(field.groupId);
                         group.classList.remove('error', 'success');
