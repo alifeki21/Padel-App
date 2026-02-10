@@ -250,6 +250,19 @@ select.form-control {
     }
 }
 
+/* Ensure inputs have enough right padding for the eye icon */
+.form-control {
+    width: 100%;
+    padding: 15px 45px 15px 45px !important; /* Important: Right padding for eye icon */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+
+
 @media (max-width: 480px) {
     .signup-form-container {
         padding: 25px 20px;
