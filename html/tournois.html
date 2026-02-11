@@ -7,7 +7,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/header.css">
-    <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -49,6 +48,140 @@
                     <h1><i class="fas fa-trophy"></i> Tournois</h1>
                     <p class="last-updated">Last Updated: February 11, 2026</p>
                 </div>
+
+                <section class="upcoming-tournaments">
+                    <h2><i class="fas fa-calendar-alt"></i> Prochains Tournois</h2>
+                    <div class="tournament-cards">
+                        <div class="tournament-card">
+                            <div class="tournament-image">
+                                <img src="../images/tournois_hello.jpg" alt="Tournoi Hello Padel">
+                                <div class="tournament-date">
+                                    <span class="day">15</span>
+                                    <span class="month">MAR</span>
+                                </div>
+                            </div>
+                            <div class="tournament-details">
+                                <h3>Tournoi Hello Padel</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Padel Badeli 7yeti </p>
+                                <p><i class="fas fa-users"></i> 16 paires max</p>
+                                <p><i class="fas fa-tag"></i> Niveau: P25/P50/P100</p>
+                                <div class="tournament-footer">
+                                    <span class="prize"><i class="fas fa-medal"></i> Prix: 60€</span>
+                                    <a href="inscription_tournois.html" class="btn-register">S'inscrire</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tournament-card">
+                            <div class="tournament-image">
+                                <img src="../images/hero.jpg" alt="Tournois amical">
+                                <div class="tournament-date">
+                                    <span class="day">22</span>
+                                    <span class="month">MAR</span>
+                                </div>
+                            </div>
+                            <div class="tournament-details">
+                                <h3>Tournois amical</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Padel Badeli 7yeti </p>
+                                <p><i class="fas fa-users"></i>8 paires (2 WC)</p>
+                                <p><i class="fas fa-tag"></i> Niveau: P1000/P1000 mixte</p>
+                                <div class="tournament-footer">
+                                    <span class="prize"><i class="fas fa-medal"></i> Prix: 60€</span>
+                                    <a href="inscription_tournois.html" class="btn-register">S'inscrire</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tournament-card">
+                            <div class="tournament-image">
+                                <img src="../images/Dora-Chamli.jpg" alt="Tournoi Féminin">
+                                <div class="tournament-date">
+                                    <span class="day">05</span>
+                                    <span class="month">AVR</span>
+                                </div>
+                            </div>
+                            <div class="tournament-details">
+                                <h3>Tournoi Féminin</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Padel Badeli 7yeti </p>
+                                <p><i class="fas fa-users"></i> 16 paires max</p>
+                                <p><i class="fas fa-tag"></i> Niveau: P25/50/100/1000</p>
+                                <div class="tournament-footer">
+                                    <span class="prize"><i class="fas fa-medal"></i> Prix: 60€</span>
+                                    <a href="inscription_tournois.html" class="btn-register">S'inscrire</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="brackets-section">
+                    <h2><i class="fas fa-diagram-project"></i> Brackets des Tournois</h2>
+                    <div class="brackets-container">
+                        <div class="tournament-selector">
+                            <label for="tournament-select">Sélectionner un tournoi:</label>
+                            <select id="tournament-select" class="tournament-select">
+                                <option>Tournoi Open Padel - 15 Mars 2026</option>
+                                <option>Coupe des Ambassadeurs - 22 Mars 2026</option>
+                                <option>Tournoi Féminin - 5 Avril 2026</option>
+                                <option>mayhemech chte5tar 5atr mtmchich</option>
+                            </select>
+                        </div>
+                        
+                        <div class="bracket">
+                            <div class="round round-1">
+                                <h4>Quarts de finale</h4>
+                                <div class="matches">
+                                    <div class="match">
+                                        <div class="team team1">Équipe A</div>
+                                        <div class="team team2">Équipe B</div>
+                                        <span class="match-score">-</span>
+                                    </div>
+                                    <div class="match">
+                                        <div class="team team1">Équipe C</div>
+                                        <div class="team team2">Équipe D</div>
+                                        <span class="match-score">-</span>
+                                    </div>
+                                    <div class="match">
+                                        <div class="team team1">Équipe E</div>
+                                        <div class="team team2">Équipe F</div>
+                                        <span class="match-score">-</span>
+                                    </div>
+                                    <div class="match">
+                                        <div class="team team1">Équipe G</div>
+                                        <div class="team team2">Équipe H</div>
+                                        <span class="match-score">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="round round-2">
+                                <h4>Demi-finales</h4>
+                                <div class="matches">
+                                    <div class="match">
+                                        <div class="team team1">Vainqueur A/B</div>
+                                        <div class="team team2">Vainqueur C/D</div>
+                                        <span class="match-score">-</span>
+                                    </div>
+                                    <div class="match">
+                                        <div class="team team1">Vainqueur E/F</div>
+                                        <div class="team team2">Vainqueur G/H</div>
+                                        <span class="match-score">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="round round-3">
+                                <h4>Finale</h4>
+                                <div class="matches">
+                                    <div class="match final">
+                                        <div class="team team1">Vainqueur 1</div>
+                                        <div class="team team2">Vainqueur 2</div>
+                                        <span class="match-score">-</span>
+                                    </div>
+                                </div>
+                                <div class="champion-placeholder">
+                                    <i class="fas fa-trophy"></i> Champion
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
         </div>
     </div>
