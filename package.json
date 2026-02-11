@@ -12,5 +12,13 @@
   "type": "commonjs",
   "dependencies": {
     "bootstrap": "^5.3.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alifeki21/Padel-App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alifeki21/Padel-App/issues"
+  },
+  "homepage": "https://github.com/alifeki21/Padel-App#readme"
 }
