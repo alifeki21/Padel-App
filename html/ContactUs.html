@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Log in - Padel Badeli 7yeti</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <title>Contact Us - Padel Badeli 7yeti</title>
     <link rel="icon" href="../images/logo.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/header.css">
-    
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/footer.css">
 
 </head>
 <body>
@@ -51,11 +51,91 @@
                     </div>
                 </nav>
             </header>
-            
-            </section>
         </div>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+    <main class="contact-main">
+        <div class="about-us">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>Welcome to Padel Badeli 7yeti, your premier destination for all things padel! We are passionate about the sport and dedicated to providing an exceptional experience for players of all levels. Whether you're a seasoned pro or just starting out, our state-of-the-art facilities and expert coaching staff are here to help you improve your game and enjoy the thrill of padel. Join us today and become part of our vibrant community of padel enthusiasts!</p>
+            </div>
+            <div class="about-image">
+                <img src="../images/padel_court.jpeg" alt="Padel Court">
+            </div>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-container">
+                <h1>Contact Us</h1>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            <div class="social-media-section">
+                <h3>Follow Us</h3>
+
+                <div class="social-icons">
+                    <a href="#" class="social-icon facebook" title="Facebook">f</a>
+                    <a href="#" class="social-icon twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="social-icon instagram" title="Instagram">@</a>
+                    <a href="#" class="social-icon linkedin" title="LinkedIn">in</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1">
+                    <h4>À propos de nous</h4>
+                    <br>
+                    <p class="text-center-custom">
+                        Padel, le point de rencontre des
+                        passionnés.
+                    </p>
+                </div>
+                <div class="col-lg-2">
+                    <h4>Coordonnées</h4>
+                    <ul>
+                        <li>📍 Insat, Centre Urbain Nord</li>
+                        <li>📞 28 219 290</li>
+                        <li>✉️ Contact@Padel.tn</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Liens utiles</h4>
+                    <br>
+                    <ul>
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/reservation">Réservation</a></li>
+                        <li><a href="/tournois">Tournois</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                © 2026 – Conçu par
+                <p style="color: white;">Padel bedili 7yeti</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
