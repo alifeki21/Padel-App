@@ -169,21 +169,21 @@ h3 {
   color: var(--accent-cyan);
 }
 
-/* ================= FOOTER ================= */
+
 
 .site-footer {
-  background-color: #1a5276; /* The deep blue from your image */
+  background-color: #1a5276;
   color: #ffffff;
   padding: 80px 0 40px;
   font-family: 'Arial', sans-serif;
 }
-/* 3-Column Split Layout */
+
 .site-footer .row {
   display: flex;
-  justify-content: flex-start; /* Aligns columns to the left */
-  align-items: flex-start;    /* This aligns all H4 titles to the same top line */
+  justify-content: flex-start; 
+  align-items: flex-start;    
   text-align: left;
-  gap: 0;                     /* Gap can mess with border spacing; use padding instead */
+  gap: 0;                     
 }
 
 .col-lg-1,
@@ -191,7 +191,7 @@ h3 {
   width: 30%;
   margin-left: 50px;
   padding: 20px 30px;
-  /* Changed from white to a light grey so it's visible on your white background */
+  
   
 }
 .col-lg-1 h4{
@@ -203,34 +203,34 @@ h3 {
 .site-footer .col-lg-3 {
   width: 25%;
   padding: 20px 30px;
-  border-right: none; /* No border on the last item */
+  border-right: none; 
 }
 
-/* Ensure the H4s have no top margin to keep alignment perfect */
+
 .site-footer h4 {
   margin-top: 0;
   margin-bottom: 20px;
 }
 
-/* Section Hover Effect */
+
 .site-footer  {
   transition: background 0.4s ease, transform 0.4s ease;
 }
 
 .site-footer .col-lg-4:hover {
-  background: rgba(255, 255, 255, 0.05); /* Subtle highlight */
-  transform: translateY(-5px); /* Lift effect */
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
 }
 
-/* Information Text Styling */
+
 .site-footer p {
   line-height: 1.8;
   font-size: 0.95rem;
-  text-transform: uppercase; /* Matching the image style */
+  text-transform: uppercase; 
   opacity: 0.9;
 }
 
-/* Contact List (Icons + Labels) */
+
 .site-footer ul {
   list-style: none;
   padding: 0;
@@ -244,7 +244,7 @@ h3 {
   font-size: 0.85rem;
 }
 
-/* Useful Links Arrows */
+
 .site-footer a {
   color: #ffffff;
   text-decoration: none;
@@ -252,7 +252,7 @@ h3 {
 }
 
 .site-footer a::before {
-  content: '›'; /* The arrow from your image */
+  content: '›'; 
   margin-right: 15px;
   font-weight: bold;
 }
@@ -262,7 +262,7 @@ h3 {
   color: #d4e6f1;
 }
 
-/* Copyright Section */
+
 .site-footer .text-center {
   margin-top: 60px;
   padding-top: 20px;
