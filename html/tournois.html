@@ -44,6 +44,7 @@
                     </div>
                 </nav>
             </header>
+            
             <main class="tournois-container">
                 <div class="tournois-header">
                     <h1><i class="fas fa-trophy"></i> Tournois</h1>
@@ -63,7 +64,7 @@
                             </div>
                             <div class="tournament-details">
                                 <h3>Tournoi Hello Padel</h3>
-                                <p><i class="fas fa-map-marker-alt"></i> Padel Badeli 7yeti </p>
+                                <p><i class="fas fa-map-marker-alt"></i> Padel Badeli 7yeti</p>
                                 <p><i class="fas fa-users"></i> 16 paires max</p>
                                 <p><i class="fas fa-tag"></i> Niveau: P25/P50/P100</p>
                                 <div class="tournament-footer">
@@ -72,6 +73,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="tournament-card">
                             <div class="tournament-image">
                                 <img src="../images/hero.jpg" alt="Tournois amical">
@@ -82,8 +84,8 @@
                             </div>
                             <div class="tournament-details">
                                 <h3>Tournois amical</h3>
-                                <p><i class="fas fa-map-marker-alt"></i> Padel Badeli 7yeti </p>
-                                <p><i class="fas fa-users"></i>8 paires (2 WC)</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Padel Badeli 7yeti</p>
+                                <p><i class="fas fa-users"></i> 8 paires (2 WC)</p>
                                 <p><i class="fas fa-tag"></i> Niveau: P1000/P1000 mixte</p>
                                 <div class="tournament-footer">
                                     <span class="prize"><i class="fas fa-medal"></i> Prix: 60€</span>
@@ -91,6 +93,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="tournament-card">
                             <div class="tournament-image">
                                 <img src="../images/Dora-Chamli.jpg" alt="Tournoi Féminin">
@@ -101,7 +104,7 @@
                             </div>
                             <div class="tournament-details">
                                 <h3>Tournoi Féminin</h3>
-                                <p><i class="fas fa-map-marker-alt"></i> Padel Badeli 7yeti </p>
+                                <p><i class="fas fa-map-marker-alt"></i> Padel Badeli 7yeti</p>
                                 <p><i class="fas fa-users"></i> 16 paires max</p>
                                 <p><i class="fas fa-tag"></i> Niveau: P25/50/100/1000</p>
                                 <div class="tournament-footer">
@@ -115,6 +118,7 @@
 
                 <section class="brackets-section">
                     <h2><i class="fas fa-diagram-project"></i> Brackets des Tournois</h2>
+                    
                     <div class="brackets-container">
                         <div class="tournament-selector">
                             <label for="tournament-select">Sélectionner un tournoi:</label>
@@ -122,70 +126,147 @@
                                 <option>Tournoi Open Padel - 15 Mars 2026</option>
                                 <option>Coupe des Ambassadeurs - 22 Mars 2026</option>
                                 <option>Tournoi Féminin - 5 Avril 2026</option>
-                                <option>mayhemech chte5tar 5atr mtmchich</option>
+                                <option>Championnat Printemps - 12 Avril 2026</option>
                             </select>
                         </div>
                         
-                        <div class="bracket">
-                            <div class="round round-1">
-                                <h4>Quarts de finale</h4>
-                                <div class="matches">
-                                    <div class="match">
-                                        <div class="team team1">Équipe A</div>
-                                        <div class="team team2">Équipe B</div>
-                                        <span class="match-score">-</span>
+                        <div class="round-carousel">
+                            <button class="nav-arrow" id="prevRound" aria-label="Round précédent">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            
+                            <div class="round-viewport" id="roundViewport">
+                                <div class="round-track" id="roundTrack">
+                                    <div class="round-card">
+                                        <h4><i class="fas fa-tasks"></i> Quarts de finale</h4>
+                                        <div class="matches-vertical">
+                                            <div class="match-item">
+                                                <div class="match-teams">
+                                                    <div class="team-row">
+                                                        <span class="team-badge"></span>
+                                                        <span class="team-name1">Équipe A</span>
+                                                    </div>
+                                                    <div class="team-row">
+                                                        <span class="team-badge team2-badge"></span>
+                                                        <span class="team-name2">Équipe B</span>
+                                                    </div>
+                                                </div>
+                                                <span class="match-score-badge">-</span>
+                                            </div>
+                                            <div class="match-item">
+                                                <div class="match-teams">
+                                                    <div class="team-row">
+                                                        <span class="team-badge"></span>
+                                                        <span class="team-name1">Équipe C</span>
+                                                    </div>
+                                                    <div class="team-row">
+                                                        <span class="team-badge team2-badge"></span>
+                                                        <span class="team-name2">Équipe D</span>
+                                                    </div>
+                                                </div>
+                                                <span class="match-score-badge">-</span>
+                                            </div>
+                                            <div class="match-item">
+                                                <div class="match-teams">
+                                                    <div class="team-row">
+                                                        <span class="team-badge"></span>
+                                                        <span class="team-name1">Équipe E</span>
+                                                    </div>
+                                                    <div class="team-row">
+                                                        <span class="team-badge team2-badge"></span>
+                                                        <span class="team-name2">Équipe F</span>
+                                                    </div>
+                                                </div>
+                                                <span class="match-score-badge">-</span>
+                                            </div>
+                                            <div class="match-item">
+                                                <div class="match-teams">
+                                                    <div class="team-row">
+                                                        <span class="team-badge"></span>
+                                                        <span class="team-name1">Équipe G</span>
+                                                    </div>
+                                                    <div class="team-row">
+                                                        <span class="team-badge team2-badge"></span>
+                                                        <span class="team-name2">Équipe H</span>
+                                                    </div>
+                                                </div>
+                                                <span class="match-score-badge">-</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="match">
-                                        <div class="team team1">Équipe C</div>
-                                        <div class="team team2">Équipe D</div>
-                                        <span class="match-score">-</span>
+                                    
+                                    <div class="round-card">
+                                        <h4><i class="fas fa-chart-simple"></i> Demi-finales</h4>
+                                        <div class="matches-vertical">
+                                            <div class="match-item">
+                                                <div class="match-teams">
+                                                    <div class="team-row">
+                                                        <span class="team-badge"></span>
+                                                        <span class="team-name1">Vainqueur Quart 1</span>
+                                                    </div>
+                                                    <div class="team-row">
+                                                        <span class="team-badge team2-badge"></span>
+                                                        <span class="team-name2">Vainqueur Quart 2</span>
+                                                    </div>
+                                                </div>
+                                                <span class="match-score-badge">-</span>
+                                            </div>
+                                            <div class="match-item">
+                                                <div class="match-teams">
+                                                    <div class="team-row">
+                                                        <span class="team-badge"></span>
+                                                        <span class="team-name1">Vainqueur Quart 3</span>
+                                                    </div>
+                                                    <div class="team-row">
+                                                        <span class="team-badge team2-badge"></span>
+                                                        <span class="team-name2">Vainqueur Quart 4</span>
+                                                    </div>
+                                                </div>
+                                                <span class="match-score-badge">-</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="match">
-                                        <div class="team team1">Équipe E</div>
-                                        <div class="team team2">Équipe F</div>
-                                        <span class="match-score">-</span>
-                                    </div>
-                                    <div class="match">
-                                        <div class="team team1">Équipe G</div>
-                                        <div class="team team2">Équipe H</div>
-                                        <span class="match-score">-</span>
+                                    
+                                    <div class="round-card">
+                                        <h4><i class="fas fa-crown"></i> Finale</h4>
+                                        <div class="matches-vertical">
+                                            <div class="match-item final">
+                                                <div class="match-teams">
+                                                    <div class="team-row">
+                                                        <span class="team-badge"></span>
+                                                        <span class="team-name1">Vainqueur Demi 1</span>
+                                                    </div>
+                                                    <div class="team-row">
+                                                        <span class="team-badge team2-badge"></span>
+                                                        <span class="team-name2">Vainqueur Demi 2</span>
+                                                    </div>
+                                                </div>
+                                                <span class="match-score-badge">-</span>
+                                            </div>
+                                        </div>
+                                        <div class="champion-spot">
+                                            <i class="fas fa-trophy"></i> Champion
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="round round-2">
-                                <h4>Demi-finales</h4>
-                                <div class="matches">
-                                    <div class="match">
-                                        <div class="team team1">Vainqueur A/B</div>
-                                        <div class="team team2">Vainqueur C/D</div>
-                                        <span class="match-score">-</span>
-                                    </div>
-                                    <div class="match">
-                                        <div class="team team1">Vainqueur E/F</div>
-                                        <div class="team team2">Vainqueur G/H</div>
-                                        <span class="match-score">-</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="round round-3">
-                                <h4>Finale</h4>
-                                <div class="matches">
-                                    <div class="match final">
-                                        <div class="team team1">Vainqueur 1</div>
-                                        <div class="team team2">Vainqueur 2</div>
-                                        <span class="match-score">-</span>
-                                    </div>
-                                </div>
-                                <div class="champion-placeholder">
-                                    <i class="fas fa-trophy"></i> Champion
-                                </div>
-                            </div>
+                            
+                            <button class="nav-arrow" id="nextRound" aria-label="Round suivant">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="carousel-dots" id="carouselDots">
+                            <button class="dot active" data-index="0" aria-label="Aller aux quarts de finale"></button>
+                            <button class="dot" data-index="1" aria-label="Aller aux demi-finales"></button>
+                            <button class="dot" data-index="2" aria-label="Aller à la finale"></button>
                         </div>
                     </div>
                 </section>
             </main>
         </div>
     </div>
+    
     <footer class="site-footer bg-white">
         <div class="container">
             <div class="row">
@@ -193,8 +274,8 @@
                     <h4>À propos de nous</h4>
                     <br>
                     <p class="text-center-custom">
-                        Padel, le point de rencontre des
-                        passionnés.
+                    Padel, le point de rencontre des
+                    passionnés.
                     </p>
                 </div>
                 <div class="col-lg-2">
@@ -209,18 +290,19 @@
                     <h4>Liens utiles</h4>
                     <br>
                     <ul>
-                        <li><a href="/">Accueil</a></li>
-                        <li><a href="/reservation">Réservation</a></li>
-                        <li><a href="/tournois">Tournois</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="acceuil.html">Accueil</a></li>
+                        <li><a href="reservation.html">Réservation</a></li>
+                        <li><a href="tournois.html">Tournois</a></li>
+                        <li><a href="ContactUs.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="text-center mt-4">
                 © 2026 – Conçu par
-                <p style="color: white;">Padel bedili 7yeti</p>
+                <span style="color: white;">Padel bedili 7yeti</span>
             </div>
         </div>
-    </footer>
+    </footer>  
+    <script src="../js/tournois.js"></script>
 </body>
 </html>
