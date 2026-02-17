@@ -108,7 +108,7 @@ body {
     margin-bottom: 40px;
 }
 
-.btn-primary, .btn-secondary {
+.btn-secondary {
     display: inline-block;
     padding: 12px 30px;
     border-radius: 10px;
@@ -120,16 +120,6 @@ body {
     min-width: 180px;
 }
 
-.btn-primary {
-    background: linear-gradient(to right, #4a6ee0, #6a11cb);
-    color: white;
-    border: none;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 14px rgba(74, 110, 224, 0.2);
-}
 
 .btn-secondary {
     background: white;
