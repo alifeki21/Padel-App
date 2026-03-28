@@ -35,8 +35,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     addFormInputListeners();
     
+    fetch('../php/get_user.php')
+    .then(response => response.json())
+    .then(result => {
+        if (result.status === 'success') {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            if (nameInput) {
+                nameInput.value = result.user.name;
+                reservationState.playerDetails.name = result.user.name;
+            }
+            if (emailInput) {
+                emailInput.value = result.user.email;
+                reservationState.playerDetails.email = result.user.email;
+            }
+        }
+    });
+
     setupButtonListeners();
-    
     setupReturnButton();
 });
 
@@ -457,16 +473,48 @@ function updateSummary() {
 function confirmBooking() {
     console.log('Booking confirmed:', reservationState);
     
-    document.querySelectorAll('.reservation-step').forEach(step => {
-        step.classList.add('hidden');
+    const formData = new FormData();
+    formData.append('court_number', reservationState.selectedCourt);
+    formData.append('reservation_date', reservationState.selectedDate);
+    formData.append('reservation_time', reservationState.selectedTime);
+    formData.append('price', courtPrice * (reservationState.playerDetails.players || 4));
+
+    const confirmBtn = document.querySelector('#step4 .btn-primary');
+    const originalText = confirmBtn.innerHTML;
+    confirmBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Confirmation...';
+    confirmBtn.disabled = true;
+
+    fetch('../php/reserve.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.status === 'success') {
+            document.querySelectorAll('.reservation-step').forEach(step => {
+                step.classList.add('hidden');
+            });
+            
+            const successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.classList.remove('hidden');
+            }
+            alert('Réservation confirmée ! Merci pour votre confiance.');
+        } else {
+            alert(result.message || 'Erreur lors de la réservation. Veuillez réessayer.');
+            if (result.message && result.message.includes('connecté')) {
+                window.location.href = '../html/login.html';
+            }
+        }
+        confirmBtn.innerHTML = originalText;
+        confirmBtn.disabled = false;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Une erreur est survenue lors de la communication avec le serveur.');
+        confirmBtn.innerHTML = originalText;
+        confirmBtn.disabled = false;
     });
-    
-    const successMessage = document.getElementById('successMessage');
-    if (successMessage) {
-        successMessage.classList.remove('hidden');
-    }
-    
-    alert('Booking confirmed! Thank you for your reservation.');
 }
 
 function loadSavedState() {

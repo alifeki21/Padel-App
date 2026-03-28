@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a Court - Padel App</title>
+    <title>Réserver un terrain - Padel House</title>
     <link rel="stylesheet" href="../css/reservation.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -12,34 +12,33 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <header class="site-header">
-                <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <header class="site-header">
+                <nav class="navbar navbar-expand-lg">
                     <div class="container">
-                        <a class="navbar-brand" href="">
-                            <img src="../images/logo1.png" height="45" alt="Casa del Padel">
+                        <a class="navbar-brand" href="acceuil.html">
+                            <img src="../images/padel house.png" alt="Padel House">
                         </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
                         <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="acceuil.html">Accueil</a>
+                                    <a class="nav-link" href="acceuil.html">Accueil</a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a class="nav-link active" href="reservation.html">Réservation</a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="tournois.html">Tournois</a>
                                 </li>
-
                                 <li class="nav-item">
-                                    <a class="nav-link" href="ContactUs.html">Contactez-nous</a>
+                                    <a class="nav-link" href="ContactUs.html">Contact</a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="login.html">Connexion</a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="sign_up.html">S’inscrire</a>
                                 </li>
@@ -52,8 +51,8 @@
         <main class="main-content">
             <div class="container">
                 <div class="page-header">
-                    <h1>Book a Padel Court</h1>
-                    <p>Reserve your court in just a few clicks</p>
+                    <h1>Réservez votre terrain de Padel</h1>
+                    <p>Réservez votre terrain en quelques clics</p>
                 </div>
 
                 <div class="progress-bar">
@@ -80,197 +79,198 @@
 
                 <div class="reservation-container">
                     <section class="reservation-step" id="step1">
-                        <h2><i class="fas fa-map-pin"></i> Select Your Court</h2>
+                        <h2><i class="fas fa-map-pin"></i> Sélectionnez votre terrain</h2>
                         
                         <div class="court-grid">
                             <div class="court-card" data-court="1">
                                 <div class="court-image">
-                                    <img src="../images/cupra.png" alt="Court 1" >
-                                    <span class="court-status available">Available Today</span>
+                                    <img src="../images/cupra.png" alt="Terrain 1" >
+                                    <span class="court-status available">Disponible aujourd'hui</span>
                                 </div>
                                 <div class="court-info">
-                                    <h3>Court 1 - Cupra</h3>
+                                    <h3>Terrain 1 - Cupra</h3>
                                     <div class="court-features">
-                                        <span><i class="fas fa-house"></i> Indoor</span>
-                                        <span><i class="fas fa-wind"></i> Wind-protected</span>  
-                                        <span><i class="fas fa-temperature-high"></i> Heated</span>
-                                        <span><i class="fas fa-snowflake"></i> Air conditioned</span>
+                                        <span><i class="fas fa-house"></i> Intérieur</span>
+                                        <span><i class="fas fa-wind"></i> Protégé du vent</span>  
+                                        <span><i class="fas fa-temperature-high"></i> Chauffé</span>
+                                        <span><i class="fas fa-snowflake"></i> Climatisé</span>
                                     </div>
                                     <div class="court-price">
-                                        <span class="price">$25</span> <span class="period">/hour</span>
+                                        <span class="price">25 DT</span> <span class="period">/heure</span>
                                     </div>
-                                    <button class="btn-select-court" onclick="selectCourt(1)">Select Court</button>
+                                    <button class="btn-select-court" onclick="selectCourt(1)">Choisir</button>
                                 </div>
                             </div>
 
                             <div class="court-card" data-court="2">
                                 <div class="court-image">
-                                    <img src="../images/dechatlon.png" alt="Court 2" >
+                                    <img src="../images/dechatlon.png" alt="Terrain 2" >
                                 </div>
                                 <div class="court-info">
-                                    <h3>Court 2 - Dechatlon</h3>
+                                    <h3>Terrain 2 - Dechatlon</h3>
                                     <div class="court-features">
-                                        <span><i class="fas fa-house"></i> Indoor</span>
-                                        <span><i class="fas fa-wind"></i> Wind-protected</span>  
-                                        <span><i class="fas fa-temperature-high"></i> Heated</span>
-                                        <span><i class="fas fa-snowflake"></i> Air conditioned</span>
+                                        <span><i class="fas fa-house"></i> Intérieur</span>
+                                        <span><i class="fas fa-wind"></i> Protégé du vent</span>  
+                                        <span><i class="fas fa-temperature-high"></i> Chauffé</span>
+                                        <span><i class="fas fa-snowflake"></i> Climatisé</span>
                                     </div>
                                     <div class="court-price">
-                                        <span class="price">$25</span> <span class="period">/hour</span>
+                                        <span class="price">25 DT</span> <span class="period">/heure</span>
                                     </div>
-                                    <button class="btn-select-court" onclick="selectCourt(2)">Select Court</button>
+                                    <button class="btn-select-court" onclick="selectCourt(2)">Choisir</button>
                                 </div>
                             </div>
 
                             <div class="court-card" data-court="3">
                                 <div class="court-image">
-                                    <img src="../images/codeforces.png" alt="Court 3">
+                                    <img src="../images/codeforces.png" alt="Terrain 3">
                                 </div>
                                 <div class="court-info">
-                                    <h3>Court 3 - Codeforces</h3>
+                                    <h3>Terrain 3 - Codeforces</h3>
                                     <div class="court-features">
-                                        <span><i class="fas fa-cloud-sun"></i> Outdoor</span>
-                                        <span><i class="fas fa-coffee"></i> Cafe nearby</span>
-                                        <span><i class="fas fa-sun"></i> Enjoy the sun</span>
+                                        <span><i class="fas fa-cloud-sun"></i> Extérieur</span>
+                                        <span><i class="fas fa-coffee"></i> Café à proximité</span>
+                                        <span><i class="fas fa-sun"></i> Profitez du soleil</span>
                                     </div>
                                     <div class="court-price">
-                                        <span class="price">$15</span> <span class="period">/hour</span>
+                                        <span class="price">15 DT</span> <span class="period">/heure</span>
                                     </div>
-                                    <button class="btn-select-court" onclick="selectCourt(3)">Select Court</button>
+                                    <button class="btn-select-court" onclick="selectCourt(3)">Choisir</button>
                                 </div>
                             </div>
                         </div>
                     </section>
 
                     <section class="reservation-step hidden" id="step2">
-                        <h2><i class="fas fa-clock"></i> Choose Date & Time</h2>
+                        <h2><i class="fas fa-clock"></i> Choisissez la date et l'heure</h2>
                         
                         <div class="datetime-container">
                             <div class="date-picker">
-                                <label for="reservation-date">Select Date</label>
+                                <label for="reservation-date">Sélectionnez la date</label>
                                 <input type="date" id="reservation-date" min="2026-02-16" value="2026-02-16">
                             </div>
 
                             <div class="time-slots">
-                                <label>Available Time Slots</label>
+                                <label>Créneaux disponibles</label>
                                 <div class="slot-grid" id="time-slots">
                                 </div>
                             </div>
                         </div>
 
                         <div class="step-navigation">
-                            <button class="btn-secondary">Back</button>
-                            <button class="btn-primary">Continue</button>
+                            <button class="btn-secondary">Retour</button>
+                            <button class="btn-primary">Continuer</button>
                         </div>
                     </section>
 
                     <section class="reservation-step hidden" id="step3">
-                        <h2><i class="fas fa-user"></i> Your Information</h2>
+                        <h2><i class="fas fa-user"></i> Vos informations</h2>
                         
                         <form id="player-details-form" class="details-form">
                             <div class="form-grid">
                                 <div class="form-group">
-                                    <label for="name">Full Name *</label>
-                                    <input type="text" id="name" required placeholder="John Doe">
+                                    <label for="name">Nom complet *</label>
+                                    <input type="text" id="name" required placeholder="Jean Dupont">
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="email">Email *</label>
-                                    <input type="email" id="email" required placeholder="john@example.com">
+                                    <label for="email">E-mail *</label>
+                                    <input type="email" id="email" required placeholder="jean@exemple.com">
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="phone">Phone Number *</label>
-                                    <input type="tel" id="phone" required placeholder="+1 234 567 890">
+                                    <label for="phone">Numéro de téléphone *</label>
+                                    <input type="tel" id="phone" required placeholder="+216 22 222 222">
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="players">Number of Players</label>
+                                    <label for="players">Nombre de joueurs</label>
                                     <select id="players">
-                                        <option value="1">1 Player</option>
-                                        <option value="2">2 Players</option>
-                                        <option value="3">3 Players</option>
-                                        <option value="4" selected>4 Players</option>
+                                        <option value="1">1 Joueur</option>
+                                        <option value="2">2 Joueurs</option>
+                                        <option value="3">3 Joueurs</option>
+                                        <option value="4" selected>4 Joueurs</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="special-requests">Special Requests</label>
-                                <textarea id="special-requests" rows="3" placeholder="Any special requirements?"></textarea>
+                                <label for="special-requests">Demandes spéciales</label>
+                                <textarea id="special-requests" rows="3" placeholder="Des besoins particuliers ?"></textarea>
                             </div>
                             <div class="options">
-                            <div class="form-checkbox">
-                                <input type="checkbox" id="terms" required>
-                                <label for="terms">
-                                I agree to the 
-                                <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms of Service</a> 
-                                and 
-                                <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                                </label>
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="terms" required>
+                                    <label for="terms">
+                                        J'accepte les 
+                                        <a href="terms.html" target="_blank" rel="noopener noreferrer">Conditions d'utilisation</a> 
+                                        et la 
+                                        <a href="privacy.html" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>
+                                    </label>
+                                </div>
                             </div>
                             <div class="step-navigation">
-                            <button class="btn-secondary">Back</button>
-                            <button class="btn-primary">Continue</button>
+                                <button class="btn-secondary">Retour</button>
+                                <button class="btn-primary">Continuer</button>
                             </div>
                         </form>
                     </section>
 
                     <section class="reservation-step hidden" id="step4">
-                        <h2><i class="fas fa-check-circle"></i> Confirm Your Booking</h2>
+                        <h2><i class="fas fa-check-circle"></i> Confirmez votre réservation</h2>
                         
                         <div class="booking-summary">
                             <div class="summary-card">
-                                <h3>Booking Summary</h3>
+                                <h3>Résumé de la réservation</h3>
                                 
                                 <div class="summary-item">
-                                    <span class="summary-label">Court:</span>
-                                    <span class="summary-value" id="summary-court">Not selected</span>
+                                    <span class="summary-label">Terrain :</span>
+                                    <span class="summary-value" id="summary-court">Non sélectionné</span>
                                 </div>
                                 
                                 <div class="summary-item">
-                                    <span class="summary-label">Date:</span>
-                                    <span class="summary-value" id="summary-date">Not selected</span>
+                                    <span class="summary-label">Date :</span>
+                                    <span class="summary-value" id="summary-date">Non sélectionné</span>
                                 </div>
                                 
                                 <div class="summary-item">
-                                    <span class="summary-label">Time:</span>
-                                    <span class="summary-value" id="summary-time">Not selected</span>
+                                    <span class="summary-label">Heure :</span>
+                                    <span class="summary-value" id="summary-time">Non sélectionné</span>
                                 </div>
                                 
                                 <div class="summary-item">
-                                    <span class="summary-label">Duration:</span>
-                                    <span class="summary-value" id="summary-duration">1 hour</span>
+                                    <span class="summary-label">Durée :</span>
+                                    <span class="summary-value" id="summary-duration">1 heure</span>
                                 </div>
                                 
                                 <div class="summary-item">
-                                    <span class="summary-label">Players:</span>
+                                    <span class="summary-label">Joueurs :</span>
                                     <span class="summary-value" id="summary-players">4</span>
                                 </div>
                                 
                                 <div class="summary-item">
-                                    <span class="summary-label">Name:</span>
+                                    <span class="summary-label">Nom :</span>
                                     <span class="summary-value" id="summary-name">-</span>
                                 </div>
                                 
                                 <div class="summary-total">
-                                    <span>Total:</span>
-                                    <span id="summary-total">$25.00</span>
+                                    <span>Total :</span>
+                                    <span id="summary-total">25 DT</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="step-navigation">
-                            <button class="btn-secondary" >Back</button>
-                            <button class="btn-primary">Confirm Booking</button>
+                            <button class="btn-secondary" >Retour</button>
+                            <button class="btn-primary">Confirmer la réservation</button>
                         </div>
                     </section>
 
                     <div class="success-message hidden" id="successMessage">
                         <i class="fas fa-check-circle"></i>
-                        <h3>Booking Confirmed!</h3>
-                        <p>Your court has been successfully reserved. Check your email for confirmation.</p>
-                        <a href="#" id="returnToStep1" class="btn-primary">Return</a>   
+                        <h3>Réservation confirmée !</h3>
+                        <p>Votre terrain a été réservé avec succès. Vérifiez vos e-mails pour la confirmation.</p>
+                        <a href="acceuil.html" id="returnToStep1" class="btn-primary">Retour à l'accueil</a>   
                     </div>
                 </div>
             </div>
@@ -314,6 +314,8 @@
     </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth.js"></script>
     <script src="../js/reservation.js"></script>
 </body>
 </html>

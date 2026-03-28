@@ -241,43 +241,47 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        const userData = {
-            firstName: document.getElementById('firstName').value.trim(),
-            lastName: document.getElementById('lastName').value.trim(),
-            email: document.getElementById('email').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            password: document.getElementById('password').value,
-            skillLevel: parseFloat(document.getElementById('level').value),
-            preferredPosition: document.getElementById('position').value,
-            playingHand: document.getElementById('hand').value
-        };
+        const formData = new FormData();
+        formData.append('first_name', document.getElementById('firstName').value.trim());
+        formData.append('last_name', document.getElementById('lastName').value.trim());
+        formData.append('email', document.getElementById('email').value.trim());
+        formData.append('phone', document.getElementById('phone').value.trim());
+        formData.append('password', document.getElementById('password').value);
+        formData.append('level', document.getElementById('level').value);
+        formData.append('position', document.getElementById('position').value);
+        formData.append('hand', document.getElementById('hand').value);
         
         const submitBtn = document.querySelector('.submit-btn');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Création du compte...';
         submitBtn.disabled = true;
         
-        setTimeout(() => {
-            const result = createAccount(userData);
-            
-            if (result.success) {
-                alert('Account created successfully! Welcome to Padel Badeli 7yeti!');
-                
+        fetch('../php/signup.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.status === 'success') {
+                alert('Compte créé avec succès ! Bienvenue chez Padel Badeli 7yeti !');
                 signupForm.reset();
-                
                 fields.forEach(field => {
                     const group = document.getElementById(field.groupId);
-                    group.classList.remove('error', 'success');
+                    if(group) group.classList.remove('error', 'success');
                 });
-                
-                window.location.href = '../html/login.html';
+                window.location.href = result.redirect;
             } else {
-                alert(result.message || 'Error creating account. Please try again.');
-                
+                alert(result.message || 'Erreur lors de la création du compte. Veuillez réessayer.');
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
-        }, 1500);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Une erreur est survenue lors de la communication avec le serveur.');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
     });
     
 

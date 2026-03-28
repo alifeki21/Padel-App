@@ -119,27 +119,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('remember').checked = false;
             }
 
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('password', password);
+
             const submitBtn = document.querySelector('.submit-btn');
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging In...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connexion...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                const demoCredentials = {
-                    email: 'demo@example.com',
-                    password: 'Demo123!'
-                };
-
-                if (email === demoCredentials.email && password === demoCredentials.password) {
-                    alert('Login successful! Welcome back to Padel Badeli 7yeti!');
+            fetch('../php/login.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status === 'success') {
+                    alert('Connexion réussie ! Bon retour chez Padel Badeli 7yeti !');
                     loginForm.reset();
-                    
                     fields.forEach(field => {
                         const group = document.getElementById(field.groupId);
-                        group.classList.remove('error', 'success');
+                        if(group) group.classList.remove('error', 'success');
                     });
-                    
-                    window.location.href = '../html/acceuil.html';
+                    window.location.href = result.redirect;
                 } else {
                     const emailGroup = document.getElementById('emailGroup');
                     const passwordGroup = document.getElementById('passwordGroup');
@@ -148,10 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     const emailError = emailGroup.querySelector('.error-message');
                     const passwordError = passwordGroup.querySelector('.error-message');
-                    emailError.textContent = 'Invalid email or password';
-                    passwordError.textContent = 'Invalid email or password';
-                    emailError.style.display = 'block';
-                    passwordError.style.display = 'block';
+                    emailError.textContent = result.message || 'E-mail ou mot de passe incorrect';
+                    passwordError.textContent = result.message || 'E-mail ou mot de passe incorrect';
                     
                     [emailGroup, passwordGroup].forEach(group => {
                         group.style.animation = 'shake 0.5s';
@@ -160,10 +160,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         }, 500);
                     });
                 }
-
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-            }, 1500);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Une erreur est survenue lors de la communication avec le serveur.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
         } else {
             const firstError = document.querySelector('.form-group.error');
             if (firstError) {
