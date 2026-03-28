@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
     color: #1f2937;
 }
+
 .about-us {
     margin: 0 0 40px 0;
     background: transparent;
@@ -43,18 +44,20 @@ body {
     line-height: 1.8;
     color: #555;
     letter-spacing: 0.3px;
+    margin-bottom: 25px;
 }
 
 .about-image {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    overflow: hidden; 
-    border-radius: 12px; 
-} 
-.about-image img { 
-    width: 80%; 
-    height: auto; 
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.about-image img {
+    width: 80%;
+    height: auto;
     object-fit: cover;
 }
 
@@ -62,11 +65,12 @@ body {
     .about-us {
         grid-template-columns: 1fr;
     }
-    
+
     .about-content {
         padding: 28px;
     }
 }
+
 .contact-main {
     padding: 40px 60px 60px;
 }
@@ -245,4 +249,67 @@ body {
     cursor: pointer;
 }
 
+/* Feedback Links Structure */
+.feedback-links-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
 
+.feedback-link {
+    flex: 0 1 auto;
+}
+
+.feedback-link a {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border: none;
+}
+
+/* Specific button colors */
+.feedback-link:nth-child(1) a {
+    background: #4a6ee0; /* Royal Blue */
+}
+
+.feedback-link:nth-child(2) a {
+    background: #e5e7eb; /* Light Greyish-blue */
+    color: #374151;      /* Dark grey text */
+    border: 1px solid #d1d5db;
+}
+
+.feedback-link a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.feedback-link:nth-child(1) a:hover {
+    background: #3a5cc7;
+}
+
+.feedback-link:nth-child(2) a:hover {
+    background: #d1d5db;
+    color: #111827;
+}
+
+.feedback-link a:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .feedback-links-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .feedback-link a {
+        width: 100%;
+    }
+}
