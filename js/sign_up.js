@@ -174,110 +174,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     addPasswordToggle();
 
-    function createAccount(userData) {
-        // In a real app, you would send this data to a server
-        // For now, we'll simulate it and store in localStorage
-        console.log('Creating account with data:', userData);
-        
-        // Store user in localStorage (for demo purposes)
-        const users = JSON.parse(localStorage.getItem('padelUsers') || '[]');
-        
-        // Check if email already exists
-        if (users.some(user => user.email === userData.email)) {
-            return {
-                success: false,
-                message: 'An account with this email already exists'
-            };
-        }
-        
-        // Add new user (remove password from stored data for security)
-        const userToStore = {
-            ...userData,
-            id: Date.now(), // Simple ID generation
-            createdAt: new Date().toISOString()
-        };
-        
-        users.push(userToStore);
-        localStorage.setItem('padelUsers', JSON.stringify(users));
-        
-        localStorage.setItem('currentUser', JSON.stringify({
-            id: userToStore.id,
-            firstName: userToStore.firstName,
-            lastName: userToStore.lastName,
-            email: userToStore.email
-        }));
-        
-        return {
-            success: true,
-            message: 'Account created successfully!',
-            user: userToStore
-        };
-    }
-    
+    // The form is submitted to php/sign_up.php (server-side handles
+    // creation + redirect). We only do client-side validation and
+    // block submission if it fails.
     signupForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
         let isValid = true;
         fields.forEach(field => {
             if (!validateField(field)) {
                 isValid = false;
             }
         });
-        
+
         const termsCheckbox = document.getElementById('terms');
-        const termsError = document.getElementById('termsError');
+        const termsError    = document.getElementById('termsError');
         if (!termsCheckbox.checked) {
             termsError.style.display = 'block';
             isValid = false;
         } else {
             termsError.style.display = 'none';
         }
-        
+
         if (!isValid) {
+            e.preventDefault();
             const firstError = document.querySelector('.form-group.error');
             if (firstError) {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
             return;
         }
-        
-        const userData = {
-            firstName: document.getElementById('firstName').value.trim(),
-            lastName: document.getElementById('lastName').value.trim(),
-            email: document.getElementById('email').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            password: document.getElementById('password').value,
-            skillLevel: parseFloat(document.getElementById('level').value),
-            preferredPosition: document.getElementById('position').value,
-            playingHand: document.getElementById('hand').value
-        };
-        
+
+        // Show a spinner while the browser is posting to PHP.
         const submitBtn = document.querySelector('.submit-btn');
-        const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            const result = createAccount(userData);
-            
-            if (result.success) {
-                alert('Account created successfully! Welcome to Padel Badeli 7yeti!');
-                
-                signupForm.reset();
-                
-                fields.forEach(field => {
-                    const group = document.getElementById(field.groupId);
-                    group.classList.remove('error', 'success');
-                });
-                
-                window.location.href = '../html/login.html';
-            } else {
-                alert(result.message || 'Error creating account. Please try again.');
-                
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        }, 1500);
+        submitBtn.disabled  = true;
     });
     
 
