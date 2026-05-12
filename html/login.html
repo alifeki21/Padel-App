@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Log in - Padel Badeli 7yeti</title>
     <link rel="stylesheet" href="../css/login.css">
@@ -8,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <!-- Add Font Awesome for icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div id="root">
         <div class="App">
@@ -20,7 +22,9 @@
                         <a class="navbar-brand" href="acceuil.html">
                             <img src="../images/padel house.png" alt="Padel House">
                         </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+                            aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
@@ -51,111 +55,115 @@
             </header>
             <section class="on">
                 <div class="login-container">
-        <div class="login-left">
-            <div class="logo">
-                <i class="fas fa-table-tennis"></i> 
-                <h1>Padel Badeli 7yeti</h1> 
-            </div>
-        <div class="welcome-text">
-            <h2>Bon retour parmi nous</h2>
-            <p>Connectez-vous pour réserver des terrains, gérer vos adhésions et profiter du jeu que vous aimez.</p>
-        </div>
-        <div class="features">
-            <div class="feature">
-                <i class="fas fa-calendar-check"></i> 
-                <span>Système de réservation facile</span> 
-            </div>
-        
-            <div class="feature">
-                <i class="fas fa-user-friends"></i> 
-                <span>Trouvez des partenaires et organisez des matchs</span> 
-            </div>
-            <div class="feature">
-                <i class="fas fa-check"></i> 
-                <span>Niveaux fiables et testés</span> 
-            </div>
-        </div>
-    </div>
-        
-        <div class="login-right">
-            <form class="login-form" id="loginForm">
-                <h3>Connexion</h3>                
-                <div class="form-group" id="emailGroup">
-                    <label for="email">Adresse E-mail</label>
-                    <div class="input-with-icon">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" id="email" class="form-control" placeholder="Entrez votre adresse mail" required>
+                    <div class="login-left">
+                        <div class="logo">
+                            <i class="fas fa-table-tennis"></i>
+                            <h1>Padel Badeli 7yeti</h1>
+                        </div>
+                        <div class="welcome-text">
+                            <h2>Bon retour parmi nous</h2>
+                            <p>Connectez-vous pour réserver des terrains, gérer vos adhésions et profiter du jeu que
+                                vous aimez.</p>
+                        </div>
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Système de réservation facile</span>
+                            </div>
+
+                            <div class="feature">
+                                <i class="fas fa-user-friends"></i>
+                                <span>Trouvez des partenaires et organisez des matchs</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Niveaux fiables et testés</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="error-message">Veuillez entrer une adresse mail valide</div>
-                </div>
-                
-                <div class="form-group" id="passwordGroup">
-                    <label for="password">Mot de passe</label>
-                    <div class="input-with-icon">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" id="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+
+                    <div class="login-right">
+                        <form class="login-form" id="loginForm">
+                            <h3>Connexion</h3>
+                            <div class="form-group" id="emailGroup">
+                                <label for="email">Adresse E-mail</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="email" class="form-control"
+                                        placeholder="Entrez votre adresse mail" required>
+                                </div>
+                                <div class="error-message">Veuillez entrer une adresse mail valide</div>
+                            </div>
+
+                            <div class="form-group" id="passwordGroup">
+                                <label for="password">Mot de passe</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="password" class="form-control"
+                                        placeholder="Entrez votre mot de passe" required>
+                                </div>
+                                <div class="error-message">Le mot de passe doit contenir au moins 6 caractères</div>
+                            </div>
+
+                            <div class="options">
+                                <div class="remember-me">
+                                    <input type="checkbox" id="remember">
+                                    <label for="remember">Se souvenir de moi</label>
+                                </div>
+                                <a href="forgot_pasword.html" class="forgot-password">Mot de passe oublié ?</a>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-sign-in-alt"></i> Se connecter
+                            </button>
+
+                            <div class="signup-link">
+                                Vous n'avez pas de compte ? <a href="../html/sign_up.html">S'inscrire maintenant</a>
+                            </div>
+                        </form>
                     </div>
-                    <div class="error-message">Le mot de passe doit contenir au moins 6 caractères</div>
                 </div>
-                
-                <div class="options">
-                    <div class="remember-me">
-                        <input type="checkbox" id="remember">
-                        <label for="remember">Se souvenir de moi</label>
-                    </div>
-                    <a href="forgot_pasword.html" class="forgot-password">Mot de passe oublié ?</a>
-                </div>
-                
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-sign-in-alt"></i> Se connecter
-                </button>
-                                
-                <div class="signup-link">
-                    Vous n'avez pas de compte ? <a href="../html/sign_up.html">S'inscrire maintenant</a>
-                </div>
-            </form>
-        </div>
-    </div>
             </section>
         </div>
         <footer class="site-footer bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-1">
-                    <h4>À propos de nous</h4>
-                    <br>
-                    <p class="text-center-custom">
-                        Padel, le point de rencontre des
-                        passionnés.
-                    </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <h4>À propos de nous</h4>
+                        <br>
+                        <p class="text-center-custom">
+                            Padel, le point de rencontre des
+                            passionnés.
+                        </p>
+                    </div>
+                    <div class="col-lg-2">
+                        <h4>Coordonnées</h4>
+                        <ul>
+                            <li>📍 Insat, Centre Urbain Nord</li>
+                            <li>📞 28 219 290</li>
+                            <li>✉️ Contact@Padel.tn</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Liens utiles</h4>
+                        <br>
+                        <ul>
+                            <li><a href="acceuil.html">Accueil</a></li>
+                            <li><a href="reservation.html">Réservation</a></li>
+                            <li><a href="tournois.html">Tournois</a></li>
+                            <li><a href="ContactUs.html">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <h4>Coordonnées</h4>
-                    <ul>
-                        <li>📍 Insat, Centre Urbain Nord</li>
-                        <li>📞 28 219 290</li>
-                        <li>✉️ Contact@Padel.tn</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h4>Liens utiles</h4>
-                    <br>
-                    <ul>
-                        <li><a href="acceuil.html">Accueil</a></li>
-                        <li><a href="reservation.html">Réservation</a></li>
-                        <li><a href="tournois.html">Tournois</a></li>
-                        <li><a href="ContactUs.html">Contact</a></li>
-                    </ul>
+                <div class="text-center mt-4">
+                    © 2026 – Conçu par
+                    <p style="color: white;">Padel bedili 7yeti</p>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                © 2026 – Conçu par
-                <p style="color: white;">Padel bedili 7yeti</p>
-            </div>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/auth.js"></script>
-    <script src="../js/login.js"></script>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/auth.js"></script>
+        <script src="../js/login.js"></script>
 </body>
+
 </html>

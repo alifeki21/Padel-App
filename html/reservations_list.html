@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo.png" />
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/acceuil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Mes Réservations - Padel House</title>
+    <style>
+        .res-container {
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .res-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .res-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .res-info h4 {
+            margin: 0 0 5px;
+            color: #007bff;
+        }
+
+        .res-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .res-status {
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-confirmed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-cancelled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .no-res {
+            text-align: center;
+            padding: 50px;
+            background: white;
+            border-radius: 15px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="acceuil.html">
+                    <img src="../images/padel house.png" alt="Padel House">
+                </a>
+                <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="acceuil.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservation.html">Réservation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tournois.html">Tournois</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="res-container">
+        <h2 class="page-title"><i class="fas fa-calendar-check me-2 text-primary"></i> Mes Réservations</h2>
+        <div id="reservationsList">
+            <!-- Reservations will be loaded here -->
+            <div class="text-center py-5">
+                <i class="fas fa-spinner fa-spin fa-2x text-primary"></i>
+                <p class="mt-2">Chargement de vos réservations...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1">
+                    <h4>À propos de nous</h4>
+                    <br>
+
+                    <p class="text-center-custom">
+                        Padel, le point de rencontre des
+                        passionnés.
+                    </p>
+                </div>
+                <div class="col-lg-2">
+                    <h4>Coordonnées</h4>
+                    <ul>
+                        <li>📍 Insat, Centre Urbain Nord</li>
+                        <li>📞 28 219 290</li>
+                        <li>✉️ Contact@Padel.tn</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Liens utiles</h4>
+                    <br>
+                    <ul>
+                        <li><a href="acceuil.html">Accueil</a></li>
+                        <li><a href="reservation.html">Réservation</a></li>
+                        <li><a href="tournois.html">Tournois</a></li>
+                        <li><a href="ContactUs.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                © 2026 – Conçu par
+                <p style="color: white;">Padel bedili 7yeti</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/reservations_list.js"></script>
+</body>
+
+</html>

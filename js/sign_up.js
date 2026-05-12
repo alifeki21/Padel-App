@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const signupForm = document.getElementById('signupForm');
     const patterns = {
         email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-        phone: /^[\+]?[1-9][\d]{0,15}$/, 
-        password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+        phone: /^[\+]?[1-9][\d]{0,15}$/,
+        password: /^.{8,}$/
     };
-    
+
     const fields = [
         {
             id: 'firstName',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             validate: (value) => {
                 if (!value) return 'Password is required';
                 if (value.length < 8) return 'Password must be at least 8 characters';
-                if (!patterns.password.test(value)) return 'Password must contain uppercase, lowercase, number and special character';
+                if (!patterns.password.test(value)) return 'Password does not meet the requirements';
                 return '';
             }
         },
@@ -90,13 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     ];
-    
+
     function validateField(field) {
         const input = document.getElementById(field.id);
         const group = document.getElementById(field.groupId);
         const value = input.value;
         const errorMessage = field.validate(value);
-        
+
         if (errorMessage) {
             group.classList.remove('success');
             group.classList.add('error');
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return true;
         }
     }
-    
+
     fields.forEach(field => {
         const input = document.getElementById(field.id);
         if (input) {
@@ -123,14 +123,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const input2 = document.getElementById('confirmPassword');
         const group2 = document.getElementById('confirmPasswordGroup');
-    
+
         const eyeIcon = document.createElement('i');
         eyeIcon.className = 'fas fa-eye password-toggle';
 
         const eyeIcon2 = document.createElement('i');
         eyeIcon2.className = 'fas fa-eye password-toggle';
 
-        eyeIcon.addEventListener('click', function() {
+        eyeIcon.addEventListener('click', function () {
             if (input.type === 'password') {
                 input.type = 'text';
                 eyeIcon.className = 'fas fa-eye-slash password-toggle';
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-    eyeIcon2.addEventListener('click', function() {
+        eyeIcon2.addEventListener('click', function () {
             if (input2.type === 'password') {
                 input2.type = 'text';
                 eyeIcon2.className = 'fas fa-eye-slash password-toggle';
@@ -150,38 +150,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-    
-    group.querySelector('.input-with-icon').appendChild(eyeIcon);
 
-    group2.querySelector('.input-with-icon').appendChild(eyeIcon2);
+        group.querySelector('.input-with-icon').appendChild(eyeIcon);
+
+        group2.querySelector('.input-with-icon').appendChild(eyeIcon2);
 
 
-    eyeIcon.style.position = 'absolute';
-    eyeIcon.style.left = '300px';
-    eyeIcon.style.transform = 'translateX(95%)';
-    eyeIcon.style.top = '19px';
-    eyeIcon.style.cursor = 'pointer';
+        eyeIcon.style.position = 'absolute';
+        eyeIcon.style.left = '300px';
+        eyeIcon.style.transform = 'translateX(95%)';
+        eyeIcon.style.top = '19px';
+        eyeIcon.style.cursor = 'pointer';
 
-    eyeIcon2.style.position = 'absolute';
-    eyeIcon2.style.left = '300px';
-    eyeIcon2.style.transform = 'translateX(95%)';
-    eyeIcon2.style.top = '19px';
-    eyeIcon2.style.cursor = 'pointer';
+        eyeIcon2.style.position = 'absolute';
+        eyeIcon2.style.left = '300px';
+        eyeIcon2.style.transform = 'translateX(95%)';
+        eyeIcon2.style.top = '19px';
+        eyeIcon2.style.cursor = 'pointer';
 
-  
+
 
     }
-    
+
     addPasswordToggle();
 
     function createAccount(userData) {
         // In a real app, you would send this data to a server
         // For now, we'll simulate it and store in localStorage
         console.log('Creating account with data:', userData);
-        
+
         // Store user in localStorage (for demo purposes)
         const users = JSON.parse(localStorage.getItem('padelUsers') || '[]');
-        
+
         // Check if email already exists
         if (users.some(user => user.email === userData.email)) {
             return {
@@ -189,41 +189,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: 'An account with this email already exists'
             };
         }
-        
+
         // Add new user (remove password from stored data for security)
         const userToStore = {
             ...userData,
             id: Date.now(), // Simple ID generation
             createdAt: new Date().toISOString()
         };
-        
+
         users.push(userToStore);
         localStorage.setItem('padelUsers', JSON.stringify(users));
-        
+
         localStorage.setItem('currentUser', JSON.stringify({
             id: userToStore.id,
             firstName: userToStore.firstName,
             lastName: userToStore.lastName,
             email: userToStore.email
         }));
-        
+
         return {
             success: true,
             message: 'Account created successfully!',
             user: userToStore
         };
     }
-    
-    signupForm.addEventListener('submit', function(e) {
+
+    signupForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         let isValid = true;
         fields.forEach(field => {
             if (!validateField(field)) {
                 isValid = false;
             }
         });
-        
+
         const termsCheckbox = document.getElementById('terms');
         const termsError = document.getElementById('termsError');
         if (!termsCheckbox.checked) {
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             termsError.style.display = 'none';
         }
-        
+
         if (!isValid) {
             const firstError = document.querySelector('.form-group.error');
             if (firstError) {
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             return;
         }
-        
+
         const formData = new FormData();
         formData.append('first_name', document.getElementById('firstName').value.trim());
         formData.append('last_name', document.getElementById('lastName').value.trim());
@@ -250,39 +250,39 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('level', document.getElementById('level').value);
         formData.append('position', document.getElementById('position').value);
         formData.append('hand', document.getElementById('hand').value);
-        
+
         const submitBtn = document.querySelector('.submit-btn');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Création du compte...';
         submitBtn.disabled = true;
-        
+
         fetch('../php/signup.php', {
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
-        .then(result => {
-            if (result.status === 'success') {
-                alert('Compte créé avec succès ! Bienvenue chez Padel Badeli 7yeti !');
-                signupForm.reset();
-                fields.forEach(field => {
-                    const group = document.getElementById(field.groupId);
-                    if(group) group.classList.remove('error', 'success');
-                });
-                window.location.href = result.redirect;
-            } else {
-                alert(result.message || 'Erreur lors de la création du compte. Veuillez réessayer.');
+            .then(response => response.json())
+            .then(result => {
+                if (result.status === 'success') {
+                    alert('Compte créé avec succès ! Bienvenue chez Padel Badeli 7yeti !');
+                    signupForm.reset();
+                    fields.forEach(field => {
+                        const group = document.getElementById(field.groupId);
+                        if (group) group.classList.remove('error', 'success');
+                    });
+                    window.location.href = result.redirect;
+                } else {
+                    alert(result.message || 'Erreur lors de la création du compte. Veuillez réessayer.');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Une erreur est survenue lors de la communication avec le serveur.');
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Une erreur est survenue lors de la communication avec le serveur.');
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        });
+            });
     });
-    
+
 
 });

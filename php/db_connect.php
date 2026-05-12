@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "admin";
 $dbname = "padel_db";
 
 // Pour gérer les erreurs lors de la connexion
