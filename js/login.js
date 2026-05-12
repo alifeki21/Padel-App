@@ -93,83 +93,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
     checkRememberMe();
 
+    // The form is submitted to php/login.php (server-side handles
+    // authentication + redirect). We only do client-side validation
+    // and "remember me" handling here.
     loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
         let isValid = true;
-        
+
         fields.forEach(field => {
             if (!validateField(field)) {
                 isValid = false;
             }
         });
 
-        if (isValid) {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const rememberMe = document.getElementById('remember').checked;
-
-            if (rememberMe) {
-                localStorage.setItem('rememberedEmail', email);
-                localStorage.setItem('rememberedPassword', password);
-            } else {
-                localStorage.removeItem('rememberedEmail');
-                localStorage.removeItem('rememberedPassword');
-                document.getElementById('email').value = '';
-                document.getElementById('password').value = '';
-                document.getElementById('remember').checked = false;
-            }
-
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging In...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                const demoCredentials = {
-                    email: 'demo@example.com',
-                    password: 'Demo123!'
-                };
-
-                if (email === demoCredentials.email && password === demoCredentials.password) {
-                    alert('Login successful! Welcome back to Padel Badeli 7yeti!');
-                    loginForm.reset();
-                    
-                    fields.forEach(field => {
-                        const group = document.getElementById(field.groupId);
-                        group.classList.remove('error', 'success');
-                    });
-                    
-                    window.location.href = '../html/acceuil.html';
-                } else {
-                    const emailGroup = document.getElementById('emailGroup');
-                    const passwordGroup = document.getElementById('passwordGroup');
-                    emailGroup.classList.add('error');
-                    passwordGroup.classList.add('error');
-                    
-                    const emailError = emailGroup.querySelector('.error-message');
-                    const passwordError = passwordGroup.querySelector('.error-message');
-                    emailError.textContent = 'Invalid email or password';
-                    passwordError.textContent = 'Invalid email or password';
-                    emailError.style.display = 'block';
-                    passwordError.style.display = 'block';
-                    
-                    [emailGroup, passwordGroup].forEach(group => {
-                        group.style.animation = 'shake 0.5s';
-                        setTimeout(() => {
-                            group.style.animation = '';
-                        }, 500);
-                    });
-                }
-
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
-        } else {
+        if (!isValid) {
+            e.preventDefault();
             const firstError = document.querySelector('.form-group.error');
             if (firstError) {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
+            return;
         }
+
+        const email          = document.getElementById('email').value;
+        const password       = document.getElementById('password').value;
+        const rememberMe     = document.getElementById('remember').checked;
+
+        if (rememberMe) {
+            localStorage.setItem('rememberedEmail', email);
+            localStorage.setItem('rememberedPassword', password);
+        } else {
+            localStorage.removeItem('rememberedEmail');
+            localStorage.removeItem('rememberedPassword');
+        }
+
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging In...';
+        submitBtn.disabled  = true;
+        // Do NOT preventDefault: let the browser POST to login.php.
     });
 
     const style = document.createElement('style');
